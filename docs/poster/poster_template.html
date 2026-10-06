@@ -1,0 +1,236 @@
+<title>MediScribe 전시 포스터</title>
+<style>
+/* 950x1200mm 세로 포스터 — 대회 배경 유지, 흰 영역 2단 + 전폭 띠 2개 */
+:root{
+  --deep:#43176F; --mid:#6B3C9E; --ink:#1C1526; --sub:#5B5168; --line:#D9D0E4;
+  --teal:#0E9A96; --amber:#E09A2B; --rose:#C8366B;
+  --f-head:'Paperlogy','Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#2b2b31;font-family:var(--f-head);color:var(--ink)}
+#stage{display:flex;justify-content:center;padding:20px 16px}
+#poster{width:950mm;height:1200mm;position:relative;flex:none;
+  background:#fff url("__BG__") center/100% 100% no-repeat;transform-origin:top center}
+#canvas{position:absolute;left:5.2%;right:5.2%;top:17.2%;bottom:8.6%;display:flex;flex-direction:column;gap:6.5mm}
+
+.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:10mm;
+  border-bottom:1.6mm solid var(--deep);padding-bottom:5mm}
+.hero h1{margin:0;font-size:31mm;line-height:1.02;letter-spacing:-.5mm;color:var(--deep);font-weight:800}
+.hero h1 small{display:block;font-size:11.5mm;font-weight:700;color:var(--mid);margin-top:3mm;letter-spacing:0}
+.hero .who{text-align:right;font-size:7.8mm;line-height:1.5;color:var(--sub);white-space:nowrap}
+.hero .who b{display:block;font-size:9.6mm;color:var(--ink)}
+
+.lede{font-size:9.2mm;line-height:1.38;margin:0}
+.lede b{color:var(--deep)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.col{display:flex;flex-direction:column;gap:6mm;min-width:0}
+.sec{display:flex;flex-direction:column;gap:3.4mm}
+.bar{background:var(--deep);color:#fff;font-weight:700;font-size:9.2mm;padding:2.6mm 5.5mm;
+  border-radius:1.6mm;letter-spacing:-.2mm}
+.bar.alt{background:var(--mid)}
+.sec ul{margin:0;padding-left:6.5mm;font-size:7.8mm;line-height:1.38}
+.sec li{margin-bottom:2.2mm}
+.sec li::marker{color:var(--mid)}
+b.hl{color:var(--deep)}
+.note{font-size:6.6mm;color:var(--sub);line-height:1.36;margin:0}
+.twoup{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.twoup img{width:100%;height:118mm;object-fit:contain;background:#F6F4F8;border-radius:2mm;border:.5mm solid var(--line);display:block}
+.maps img{object-fit:cover!important;background:none!important;height:104mm!important}
+.twoup .cap{font-size:5.9mm;color:var(--sub);margin-top:1.4mm}
+.twoup .cap b{color:var(--deep)}
+
+table{border-collapse:collapse;width:100%;font-size:7mm}
+th,td{text-align:left;padding:2.2mm 2.4mm;border-bottom:.4mm solid var(--line);vertical-align:baseline}
+th{font-size:6.4mm;color:var(--sub);font-weight:700;border-bottom:.8mm solid var(--deep)}
+td.v{font-weight:800;color:var(--deep);white-space:nowrap;font-variant-numeric:tabular-nums}
+td.c{font-size:6mm;color:var(--sub);line-height:1.28}
+
+.diff{display:flex;flex-direction:column;gap:3mm}
+.diff .d{display:grid;grid-template-columns:11mm 1fr;gap:3.4mm;align-items:start}
+.diff .n{width:11mm;height:11mm;border-radius:50%;background:var(--deep);color:#fff;
+  font-weight:800;font-size:6.8mm;display:flex;align-items:center;justify-content:center}
+.diff .t{font-size:7.5mm;line-height:1.34}
+.diff .t b{color:var(--deep)}
+
+.strip{display:flex;flex-direction:column;gap:2.6mm}
+.strip .row{font-size:7.4mm;line-height:1.32}
+.strip .row b{color:var(--deep)}
+
+.ex{display:grid;grid-template-columns:1.22fr 1fr 1.22fr;gap:4mm;align-items:stretch}
+.ex .card{border:.6mm solid var(--line);border-radius:2.4mm;padding:4mm 4.6mm;display:flex;flex-direction:column;gap:2.2mm}
+.ex .card.out{border-color:var(--deep);border-width:1mm;background:#FAF7FD}
+.ex .k{font-size:6.1mm;font-weight:700;color:var(--sub)}
+.ex .k.o{color:var(--deep)}
+.talk{display:flex;flex-direction:column;gap:2mm;margin:0}
+.talk p{margin:0;font-size:6.1mm;line-height:1.3;color:#2A2335}
+.talk .w{font-weight:700;color:var(--teal);margin-right:1.4mm}
+.talk .w.p{color:var(--sub)}
+.talk em{font-style:normal;font-weight:700;color:var(--deep)}
+.shot{height:102mm;width:auto;max-width:100%;border:.4mm solid var(--line);border-radius:1.6mm;display:block;margin:0 auto}
+.memo{display:flex;flex-direction:column;gap:1.2mm;margin:0}
+.memo .g{font-size:6.1mm;font-weight:700;color:var(--deep);margin-top:1.4mm}
+.memo .l{font-size:6.1mm;line-height:1.26;padding-left:3.2mm;border-left:.8mm solid var(--teal)}
+.stamp{margin-top:auto;font-size:6.1mm;color:var(--deep);font-weight:700;display:flex;align-items:center;gap:2.2mm}
+.stamp i{font-style:normal;width:4.4mm;height:4.4mm;border-radius:50%;background:var(--teal)}
+.tiny{font-size:5.7mm;color:var(--sub);line-height:1.32;margin:0}
+
+.foot{display:flex;gap:4.5mm;align-items:center;flex-wrap:wrap;border-top:.6mm solid var(--line);
+  padding-top:2.8mm;font-size:6.2mm;color:var(--sub);margin-top:auto}
+.chip{background:#F2ECF8;color:var(--deep);font-weight:700;padding:1.5mm 3.8mm;border-radius:999px;font-size:6.2mm}
+
+@media print{@page{size:950mm 1200mm;margin:0} body{background:#fff} #stage{padding:0} #poster{transform:none!important}}
+</style>
+
+<div id="stage"><div id="poster"><div id="canvas">
+
+  <header class="hero">
+    <h1>MediScribe<small>회진에 동행하는 진료 요약 로봇</small></h1>
+    <div class="who"><b>MediScribe 팀</b>남윤상 · 김진찬 · 지민선 · 김해인</div>
+  </header>
+
+  <p class="lede">회진은 5분 안에 끝나고, 차트는 환자가 볼 수 없습니다. MediScribe는 의사–환자 대화를 듣고
+    <b>환자가 가져갈 설명문</b>을 만들어 <b>의사가 검수한 내용만</b> 그 자리에서 종이와 QR로 전달합니다.
+    음성인식·요약·주행이 모두 로봇 안에서 돌아가 <b>대화는 병원 밖으로 나가지 않습니다.</b></p>
+
+  <div class="cols">
+    <div class="col">
+
+      <section class="sec">
+        <div class="bar">개발 배경 — 설명은 말로 한 번 끝난다</div>
+        <ul>
+          <li>회진은 대개 5분 이내. 환자는 <b class="hl">약 용량·재검 일정·위험 신호</b>를 기억하지 못한 채 병실을 나선다.</li>
+          <li>차트는 의료진만 본다. <b class="hl">환자가 자기 진료 내용을 다시 확인할 경로가 없다.</b> 고령 환자와 보호자는 더 어렵다.</li>
+        </ul>
+        <p class="note">→ 설명이 끝나는 그 자리에서, 환자가 손에 쥘 종이 한 장을 만든다.</p>
+      </section>
+
+      <section class="sec">
+        <div class="bar">작동 방식 — 8단계 파이프라인</div>
+        __PIPE__
+        <p class="note">임상 내용이 없는 발화는 모델에 보내지 않고, 원문에 없는 숫자가 섞인 줄은 버린다.
+          모델이 흘린 용량·일정·경고는 규칙이 원문에서 직접 회수한다. 전 구간 Jetson Orin NX 16GB 온디바이스.</p>
+      </section>
+
+      <section class="sec">
+        <div class="bar alt">자율주행 — 엔코더 없는 차량의 SLAM</div>
+        <div class="twoup maps">
+          <div><img src="__MAP__" alt="복도 지도"><div class="cap"><b>복도 + 직각 코너</b></div></div>
+          <div><img src="__MAP2__" alt="교차로 지도"><div class="cap"><b>교차 복도 + 병실 입구</b></div></div>
+        </div>
+        <p class="note">수동 주행 한 번으로 작성한 점유격자 지도. 보라색이 벽, 청록색이 주행 궤적. 바퀴 엔코더가 없어
+          <b class="hl">매 스캔의 지도 정합 결과를 오도메트리로 사용</b>한다. ROS2 없이 순수 Python 구현.</p>
+      </section>
+
+    </div>
+
+    <div class="col">
+
+      <section class="sec">
+        <div class="bar">로봇 플랫폼</div>
+        <div class="twoup">
+          <div><img src="__CAR__" alt="로봇 외관"><div class="cap"><b>외관</b> 상부 장비함 · 전방 2D 라이다</div></div>
+          <div><img src="__CAR2__" alt="장비함 내부"><div class="cap"><b>내부</b> Jetson · 제어 보드 · 배터리</div></div>
+        </div>
+        <p class="note">1/5 스케일 애커만 조향 차량. Jetson Orin NX 16GB, 2D 라이다(STL-27L), 깊이 카메라(RealSense D435),
+          6채널 마이크 어레이, 배터리를 싣고 하위 제어는 Arduino Mega가 맡는다.</p>
+      </section>
+
+      <section class="sec">
+        <div class="bar alt">의사 말만 듣는다 — 얼굴 방위각 × 음원 방향</div>
+        <figure><img src="__DOCSHOT__" alt="의사 얼굴 식별 실제 구동 화면" style="width:100%;height:122mm;object-fit:cover;object-position:50% 55%;border-radius:2mm;border:.5mm solid var(--line);display:block"><figcaption style="font-size:5.9mm;color:var(--sub);margin-top:1.4mm">등록된 의료진으로 식별된 화면 — 프레임마다 이름과 거리 점수를 띄운다.</figcaption></figure>
+        <p class="note">RealSense 컬러에서 얼굴을 찾아 등록 DB와 대조해 <b class="hl">이름까지 식별</b>하고, 뎁스로 <b class="hl">방위각과 거리</b>를 잰다.
+          마이크가 추정한 <b class="hl">음원 방향과 일치할 때만 "의사 발화"로 보고 요약에 넣는다.</b> 두 센서의 0점이 달라 1회 캘리브레이션으로 맞춘다.</p>
+      </section>
+
+      <section class="sec">
+        <div class="bar">검증 결과</div>
+        <table>
+          <tr><th>지표</th><th>결과</th><th>측정 조건</th></tr>
+          <tr><td>요약 <b>안전 정보</b> 보존율</td><td class="v">98.1%</td><td class="c">모의 회진 14건 / 약 용량·일정·경고 52→53 중</td></tr>
+          <tr><td>요약 전체 보존율</td><td class="v">94.7%</td><td class="c">동일 데이터셋 71/75</td></tr>
+          <tr><td>의학용어 인식 (메트포르민)</td><td class="v">3/3</td><td class="c">마이크 30cm, 단어 부스팅 20 적용</td></tr>
+          <tr><td>미검수 출력 차단</td><td class="v">100%</td><td class="c">승인 전 출력·QR·인쇄 경로 전수 시험, 전부 403</td></tr>
+          <tr><td>라이다 수신</td><td class="v">10Hz</td><td class="c">2,172점/회전, CRC 오류 0% (921,600bps 실측)</td></tr>
+        </table>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="cols">
+    <section class="sec">
+      <div class="bar">요약 품질 — 코드 검증 단계를 쌓을수록</div>
+      __CHART__
+    </section>
+    <section class="sec">
+      <div class="bar">차별점</div>
+      <div class="diff">
+        <div class="d"><div class="n">1</div><div class="t"><b>로봇 안에서 끝난다.</b> 외부 서버 전송이 없어 대화 원문이 병원을 벗어나지 않고, 인터넷이 없는 구역에서도 동작한다.</div></div>
+        <div class="d"><div class="n">2</div><div class="t"><b>모델을 믿지 않는다.</b> 원문에 없는 숫자는 코드가 버리고, 모델이 흘린 용량·일정·경고는 코드가 원문에서 직접 회수한다.</div></div>
+        <div class="d"><div class="n">3</div><div class="t"><b>의사가 승인해야 나간다.</b> 검수 전에는 인쇄·QR이 모두 차단된다. 사람이 책임지는 지점을 코드로 고정했다.</div></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="sec">
+    <div class="bar">활용 방안 및 기대효과</div>
+    <div class="strip">
+      <div class="row">· <b>환자</b> — 설명을 종이로 가져간다. 복약 순응도와 재방문 일정 준수가 올라간다. &nbsp;&nbsp;· <b>보호자</b> — 회진에 함께 있지 못해도 같은 내용을 공유받는다.</div>
+      <div class="row">· <b>의료진</b> — 같은 설명의 반복과 퇴원 후 문의가 줄고, 남는 기록은 의사가 승인한 내용뿐이다. &nbsp;&nbsp;· <b>확장</b> — 투약 안내 · 퇴원 교육 · 검사 전 준비사항 안내로 넓힌다.</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="bar">실제 생성 예시 — 의사가 말하면, 환자는 이 종이를 받는다</div>
+    <div class="ex">
+      <div class="card">
+        <div class="k">① 진료실에서 오간 말</div>
+        <div class="talk">
+          <p><span class="w">의사</span>“지난번 검사 결과부터 보겠습니다. 공복 혈당이 <em>백팔십</em>이고 당화혈색소가 <em>팔점이 퍼센트</em>입니다. 목표가 칠 퍼센트 아래라 조금 높아요.”</p>
+          <p><span class="w">의사</span>“메트포르민을 하루 오백에서 <em>천 밀리그램</em>으로 올리겠습니다. <em>아침저녁으로 한 알씩</em> 식사와 함께 드세요.”</p>
+          <p><span class="w p">환자</span>“속이 불편하면 어떡하죠?”</p>
+          <p><span class="w">의사</span>“대개 일주일이면 괜찮아집니다. 저혈당이 올 수 있으니 <em>사탕을 꼭 가지고 다니세요</em>. 식은땀이 나거나 어지러우면 바로 드시고요.”</p>
+          <p><span class="w">의사</span>“<em>이 주 뒤에</em> 혈액검사 다시 하고 결과 보고 조정하겠습니다.”</p>
+        </div>
+        <p class="tiny" style="margin-top:auto">잡담은 임상 게이트가 걸러 모델에 가지 않는다. 한글 수사는 숫자로 바꿔 원문과 대조한다 — 백팔십→180, 팔점이→8.2, 천→1000.</p>
+      </div>
+
+      <div class="card">
+        <div class="k">② 의사 검수 — 실제 구동 캡처</div>
+        <img class="shot" src="__REVIEW__" alt="회진 메모 검수 화면">
+        <p class="tiny" style="margin-top:auto">인식 오류가 남은 줄을 의사가 고치고 승인한다. <b class="hl">승인 전에는 인쇄·QR 경로가 모두 403으로 차단된다.</b></p>
+      </div>
+
+      <div class="card out">
+        <div class="k o">③ 환자가 받아 가는 메모 — A6 인쇄 · QR</div>
+        <div class="memo">
+          <div class="g">오늘 검사 결과</div>
+          <div class="l">공복 혈당 180 · 당화혈색소 8.2% (목표 7% 미만)</div>
+          <div class="g">처방 · 약</div>
+          <div class="l">메트포르민 500mg → 1000mg 증량<br>아침 · 저녁 1알씩, 식사와 함께</div>
+          <div class="g">주의하세요</div>
+          <div class="l">저혈당 대비해 사탕 휴대, 식은땀 · 어지럼 시 바로 섭취<br>증량 초기 속쓰림 가능, 보통 1주 내 호전</div>
+          <div class="g">다음 진료</div>
+          <div class="l">2주 뒤 혈액검사 후 용량 조정</div>
+        </div>
+        <div class="stamp"><i></i>의사 검수 완료 — 승인본만 환자에게 나간다</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span class="chip">온디바이스</span>
+    <span class="chip">Human-in-the-loop</span>
+    <span class="chip">ROS2 미사용 · 순수 Python</span>
+    <span>Jetson Orin NX 16GB · NVIDIA Riva ko-KR · LDROBOT STL-27L · RealSense D435 · Arduino Mega 2560</span>
+  </div>
+
+</div></div></div>
+
+<script>
+(function(){var p=document.getElementById('poster'),s=document.getElementById('stage');
+function go(){var sc=Math.min(1,(s.clientWidth-32)/p.offsetWidth);p.style.transform='scale('+sc+')';
+s.style.height=(p.offsetHeight*sc+40)+'px';}go();window.addEventListener('resize',go);})();
+</script>
